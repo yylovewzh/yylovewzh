@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<title>Our Story - YY Love WZH</title>
 	    
@@ -25,7 +25,7 @@
             <div id="wrap">
                 <div id="text">
 			        <div id="code">
-<span class="say">2012年8月，我们相识于新生群。</span><br>
+			        	<span class="say">2012年8月，我们相识于新生群。</span><br>
 <span class="say">2012年9月我们第一次见面，你以为我是书记。</span><br>
 <span class="say">2012年10月，我们都加入了社联，你说最开始挺讨厌我的。</span><br>
 <span class="say">2013年的前一半我们装作没有在一起。</span><br>
@@ -50,7 +50,7 @@
 <span class="say">2016年9月我们正式开始异地恋。</span><br>
 <span class="say">2016年10月7日，这个网站上线了。</span><br>
 <span class="say"> </span><br>
-<span class="say">WZH，我没有太多的愿望，只想让你陪我一起用这一生填满这个列表。</span><br>
+<span class="say">WZH，我没有太多的愿望，只是想让你陪我一起用这一生把这个列表填满吧。</span><br>
 <span class="say">———— 爱你的YY</span><br>
 			        </div>
                 </div>
@@ -63,11 +63,10 @@
             
         </div>
     
-    <div align="center">
-          <script>
-          </script>
-          
-      <script>
+    <script>
+    </script>
+
+    <script>
     (function(){
         var canvas = $('#canvas');
 		
@@ -75,11 +74,13 @@
             $("#error").show();
             return false;
         }
+
         var width = canvas.width();
         var height = canvas.height();
         
         canvas.attr("width", width);
         canvas.attr("height", height);
+
         var opts = {
             seed: {
                 x: width / 2 - 20,
@@ -115,10 +116,12 @@
                 speed: 10,
             }
         }
+
         var tree = new Tree(canvas[0], width, height, opts);
         var seed = tree.seed;
         var foot = tree.footer;
         var hold = 1;
+
         canvas.click(function(e) {
             var offset = canvas.offset(), x, y;
             x = e.pageX - offset.left;
@@ -135,6 +138,7 @@
             y = e.pageY - offset.top;
             canvas.toggleClass('hand', seed.hover(x, y));
         });
+
         var seedAnimate = eval(Jscex.compile("async", function () {
             seed.draw();
             while (hold) {
@@ -150,18 +154,21 @@
                 $await(Jscex.Async.sleep(10));
             }
         }));
+
         var growAnimate = eval(Jscex.compile("async", function () {
             do {
     	        tree.grow();
                 $await(Jscex.Async.sleep(10));
             } while (tree.canGrow());
         }));
+
         var flowAnimate = eval(Jscex.compile("async", function () {
             do {
     	        tree.flower(2);
                 $await(Jscex.Async.sleep(10));
             } while (tree.canFlower());
         }));
+
         var moveAnimate = eval(Jscex.compile("async", function () {
             tree.snapshot("p1", 240, 0, 610, 680);
             while (tree.move("p1", 500, 0)) {
@@ -170,12 +177,14 @@
             }
             foot.draw();
             tree.snapshot("p2", 500, 0, 610, 680);
+
             // 会有闪烁不得意这样做, (＞﹏＜)
             canvas.parent().css("background", "url(" + tree.toDataURL('image/png') + ")");
             canvas.css("background", "#ffe");
             $await(Jscex.Async.sleep(300));
             canvas.css("background", "none");
         }));
+
         var jumpAnimate = eval(Jscex.compile("async", function () {
             var ctx = tree.ctx;
             while (true) {
@@ -185,6 +194,7 @@
                 $await(Jscex.Async.sleep(25));
             }
         }));
+
         var textAnimate = eval(Jscex.compile("async", function () {
 		    var together = new Date();
 		    together.setFullYear(2013, 03, 18); 			//时间年月日
@@ -192,6 +202,7 @@
 		    together.setMinutes(0);					//分钟
 		    together.setSeconds(0);					//秒前一位
 		    together.setMilliseconds(2);				//秒第二位
+
 		    $("#code").show().typewriter();
             $("#clock-box").fadeIn(500);
             while (true) {
@@ -199,18 +210,22 @@
                 $await(Jscex.Async.sleep(1000));
             }
         }));
+
         var runAsync = eval(Jscex.compile("async", function () {
             $await(seedAnimate());
             $await(growAnimate());
             $await(flowAnimate());
             $await(moveAnimate());
+
             textAnimate().start();
+
             $await(jumpAnimate());
         }));
+
         runAsync().start();
     })();
-          </script>
-      <script>
+    </script>
+    <script>
 var _hmt = _hmt || [];
 (function() {
   var hm = document.createElement("script");
@@ -218,8 +233,8 @@ var _hmt = _hmt || [];
   var s = document.getElementsByTagName("script")[0]; 
   s.parentNode.insertBefore(hm, s);
 })();
-          </script>
-            <p align="center"><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=280 height=86 src="http://music.163.com/outchain/player?type=2&id=30039685&auto=1&height=66"></iframe>
-    </div>
-       
+</script>
+	    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=280 height=86 src="http://music.163.com/outchain/player?type=2&id=30039685&auto=1&height=66"></iframe>
+
+
 </body></html>
